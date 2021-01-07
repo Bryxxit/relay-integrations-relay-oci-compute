@@ -5,7 +5,7 @@ apiVersion: integration/v1
 kind: Integration
 
 # The integration slug. Required.
-name: aws-ec2
+name: oci-compute
 
 # The release channel for this integration. One of alpha, beta, rc or stable.
 # Optional. Defaults to stable.
@@ -18,15 +18,15 @@ channel: stable
 #
 # As a convenience, this information may come from another text file or from a
 # Git tag (if applicable). We may add additional sources in the future.
-version: v20200408
+version: v20210107
 
 # The shortest possible accurate description of this integration. Required. May
 # just be the name of the service.
-summary: Amazon Web Services Elastic Compute Cloud
+summary: Oracle Cloud infrastructure Compute Service
 
 # A paragraph or two describing what this integration does. Optional. Markdown.
 description: |
-    AWS EC2 is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
+    OCI Compute is a web service that provides secure, resizable compute capacity in the cloud.
 
 # License information. Optional. If not specified, this integration is assumed
 # to be unlicensed proprietary code. Otherwise, must be a valid SPDX License
@@ -36,16 +36,16 @@ license: Apache-2.0
 # Owner of this integration. Required, but may be optional in the future if it
 # can be inferred from the provider of the integration.
 owner:
-  name: Puppet, Inc.
-  email: relay@puppet.com
-  url: https://puppet.com
+  name: Bryxx NV.
+  email: servicedesk@bryxx.eu
+  url: https://bryxx.eu/
 
 # URL to this integration's Website. Optional.
-homepage: https://github.com/relay-integrations/relay-aws-ec2
+homepage: https://github.com/Bryxxit/relay-oci-compute
 
 # URL to this integration's source code. Optional. If the homepage is a GitHub
 # link, may be inferred automatically.
-source: git://github.com/relay-integrations/relay-aws-ec2.git
+source: git://github.com/Bryxxit/relay-oci-compute.git
 
 tags:
-  - aws
+  - oci

@@ -7,7 +7,7 @@
 			"items": {
 				"type": "object"
 			},
-			"description": "The EC2 instances in the given region."
+			"description": "The OCI instances in the given region."
 		}
 	},
 	"required": [
