@@ -1,6 +1,6 @@
 # Amazon Web Services Elastic Compute Cloud integration
 
-Integration with Amazon Web Services Elastic Compute Cloud for Puppet Relay.
+Integration with Oracle Cloud Infrastructure Compute Service for Puppet Relay.
 
 ## Actions
 
@@ -8,13 +8,13 @@ The following are supported actions:
 
 |   Type    |  Name              |
 |-----------|--------------------|
-| Step      | [aws-ec2-step-key-pairs-delete](/steps/aws-ec2-step-key-pairs-delete)  | 
-| Step      | [aws-ec2-step-images-describe](/steps/aws-ec2-step-images-describe)    | 
-| Step      | [aws-ec2-step-instances-describe](/steps/aws-ec2-step-instances-describe) | 
-| Step      | [aws-ec2-step-key-pairs-describe](/steps/aws-ec2-step-key-pairs-describe) |  
-| Step      | [aws-ec2-step-instances-stop](/steps/aws-ec2-step-instances-stop) |  
-| Step      | [aws-ec2-step-instances-terminate](/steps/aws-ec2-step-instances-terminate) |  
-| Step      | [aws-ec2-step-instances-reboot](/steps/aws-ec2-step-instances-reboot) |  
+| Step      | [oci-compute-step-key-pairs-delete](/steps/oci-compute-step-key-pairs-delete)  | 
+| Step      | [oci-compute-step-images-describe](/steps/oci-compute-step-images-describe)    | 
+| Step      | [oci-compute-step-instances-describe](/steps/oci-compute-step-instances-describe) | 
+| Step      | [oci-compute-step-key-pairs-describe](/steps/oci-compute-step-key-pairs-describe) |  
+| Step      | [oci-compute-step-instances-stop](/steps/oci-compute-step-instances-stop) |  
+| Step      | [oci-compute-step-instances-terminate](/steps/oci-compute-step-instances-terminate) |  
+| Step      | [oci-compute-step-instances-reboot](/steps/oci-compute-step-instances-reboot) |  
 
 
 ## Contributing

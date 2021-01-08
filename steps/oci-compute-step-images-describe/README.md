@@ -1,7 +1,7 @@
 # aws-ec2-step-images-describe
 
-This [AWS EC2](https://aws.amazon.com/ec2/) step container lists the images
-in an AWS region that are owned by my account and sets an output, `images`, to an
+This [OCI Compute](https://www.oracle.com/cloud/compute/) step container lists the images
+in an OCI region that are owned by my account and sets an output, `images`, to an
 array containing information about them.
 
 ## Example output `images`
