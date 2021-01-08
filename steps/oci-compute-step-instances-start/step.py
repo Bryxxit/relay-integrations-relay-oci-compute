@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-from functools import partial
-
 import boto3
 from nebula_sdk import Interface, Dynamic as D
+
 
 relay = Interface()
 
@@ -18,10 +17,9 @@ sess = boto3.Session(
   region_name=relay.get(D.aws.region),
   aws_session_token=session_token
 )
+ec2 = sess.resource('ec2')
 
-ec2 = sess.client('ec2')
-
-print("Deleted the following key pairs:\n")
-for key in relay.get(D.keyPairNames):
-  print(key)
-  ec2.delete_key_pair(KeyName=key)
+instanceIDs = relay.get(D.instanceIDs)
+print('Stopping instances: {}'.format(instanceIDs))
+if len(instanceIDs) > 0:
+    ec2.instances.filter(InstanceIds=instanceIDs).stop()
