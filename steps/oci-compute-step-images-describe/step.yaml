@@ -55,6 +55,6 @@ examples:
     name: describe-images
     image: relaysh/oci-compute-step-images-describe
     spec:
-      aws:
-        connection: !Connection { type: oci, name: my-aws-account }
-        region: !Parameter awsRegion
+      oci:
+        connection: !Connection { type: oci, name: my-oci-account }
+        region: !Parameter ociRegion

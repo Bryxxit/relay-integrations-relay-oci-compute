@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import oci
 from oci.config import validate_config
-from nebula_sdk import Interface, Dynamic as D
+from relay_sdk import Interface, Dynamic as D
 
 relay = Interface()
 
@@ -21,7 +21,6 @@ raw_images = compute.list_images(compartment_id).data
 if not raw_images:
     print("No images found")
     quit()
-
 for image in raw_images:
     print('Found the following images: {}'.format(image.id))
 
