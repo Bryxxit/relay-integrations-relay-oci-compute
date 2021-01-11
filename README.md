@@ -1,4 +1,4 @@
-# Amazon Web Services Elastic Compute Cloud integration
+# Oracle Cloud Infrastructure Compute Cloud integration
 
 Integration with Oracle Cloud Infrastructure Compute Service for Puppet Relay.
 
