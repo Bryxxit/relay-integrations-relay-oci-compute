@@ -7,19 +7,19 @@ kind: Step
 
 # The name of the action. Required. Must be exactly the name of the directory
 # containing the action.
-name: aws-ec2-step-instances-stop
+name: oci-compute-step-instances-start
 
 # The version of the action. Required. Must be an integer. If specified in the
 # directory name, must be exactly the version in the directory name.
 version: 1
 
 # High-level phrase describing what this action does. Required.
-summary: Stop instances
+summary: Start instances
 
 # Single-paragraph explanation of what this action does in more detail.
 # Optional. Markdown.
 description: |
-  Stops a provided set of EC2 instances.
+  Starts a provided set of OCI Compute instances.
 
 # URL or path relative to this file to an icon or icons representing this
 # action. Optional. Defaults to the integration icon.
@@ -37,7 +37,7 @@ build:
   kind: Docker
 
 publish:
-  repository: relaysh/aws-ec2-step-instances-stop
+  repository: relaysh/oci-compute-step-instances-start
 
 schemas:
   spec: 
@@ -45,28 +45,28 @@ schemas:
     file: spec.schema.json
 
 examples:
-- summary: Stop a single EC2 instance 
+- summary: Start a single OCI Compute instance 
   content:
     apiVersion: v1
     kind: Step
-    name: ec2-stop-instances
-    image: relaysh/aws-ec2-step-instances-stop
+    name: oci-compute-start-instances
+    image: relaysh/oci-compute-step-instances-start
     spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
+      oci:
+        connection: !Connection { type: oci, name: my-oci-account }
+        region: !Parameter ociRegion
       instanceIDs:
       - !Parameter instance-id
-- summary: Stop multiple EC2 instances (from list)
+- summary: Start multiple OCI Compute instances (from list)
   content:
     apiVersion: v1
     kind: Step
-    name: ec2-stop-instances
-    image: relaysh/aws-ec2-step-instances-stop
+    name: oci-compute-start-instances
+    image: relaysh/oci-compute-step-instances-start
     spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
+      oci:
+        connection: !Connection { type: oci, name: my-oci-account }
+        region: !Parameter ociRegion
       instanceIDs:
       - i-0123456789abcdef0
       - i-abcdef0123456789a

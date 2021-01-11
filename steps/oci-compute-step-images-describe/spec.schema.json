@@ -11,23 +11,37 @@
 					"x-relay-connectionType": "oci",
 					"description": "A Relay OCI connection to use",
 					"properties": {
-						"accessKeyID": {
+						"userOCID": {
 							"type": "string",
-							"description": "Access Key ID"
+							"description": "User Oracle Cloud ID"
 						},
-						"secretAccessKey": {
+						"keyContent": {
 							"type": "string",
-							"description": "Secret Access Key"
+							"description": "Key Content of the OCI private API key"
+						},
+						"fingerprint": {
+							"type": "string",
+							"description": "Fingerprint of the OCI private API key"
+						},
+						"tenancy": {
+							"type": "string",
+							"description": "Oracle Cloud Tenancy ID"
 						}
 					},
 					"required": [
-						"accessKeyID",
-						"secretAccessKey"
+						"userOCID",
+						"keyContent",
+						"fingerprint",
+						"tenancy"
 					]
 				},
 				"region": {
 					"type": "string",
-					"description": "The OCI region to use (for example, us-west-2)"
+					"description": "The OCI region to use (for example, eu-frankfurt-1)"
+				},
+				"compartmentID": {
+					"type": "string",
+					"description": "The OCI compartment ID to use (defaults to user tenancy ID)"
 				}
 			},
 			"required": [

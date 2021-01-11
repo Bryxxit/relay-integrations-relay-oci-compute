@@ -1,4 +1,4 @@
-# aws-ec2-step-instances-terminate
+# oci-compute-step-instances-terminate
 
-This [AWS EC2](https://aws.amazon.com/ec2/) step container terminates a given
-set of EC2 instances.
+This [OCI Compute](https://www.oracle.com/cloud/compute/) step container requests that the a
+set of given instances terminate immediately.

@@ -1,4 +1,4 @@
-# aws-ec2-step-instances-reboot
+# oci-compute-step-instances-reboot
 
-This [AWS EC2](https://aws.amazon.com/ec2/) step container requests that the a
+This [OCI Compute](https://www.oracle.com/cloud/compute/) step container requests that the a
 set of given instances reboot immediately.

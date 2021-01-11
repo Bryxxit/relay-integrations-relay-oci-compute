@@ -58,3 +58,4 @@ examples:
       oci:
         connection: !Connection { type: oci, name: my-oci-account }
         region: !Parameter ociRegion
+        compartment_id: !Parameter compartmentID

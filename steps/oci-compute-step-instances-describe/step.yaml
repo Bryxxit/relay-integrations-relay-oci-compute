@@ -14,12 +14,12 @@ name: oci-compute-step-instances-describe
 version: 1
 
 # High-level phrase describing what this action does. Required.
-summary: Describe EC2 instances
+summary: Describe OCI Compute instances
 
 # Single-paragraph explanation of what this action does in more detail.
 # Optional. Markdown.
 description: |
-  Lists the instances in the provided AWS region.
+  Lists the instances in the provided OCI region.
 
 # URL or path relative to this file to an icon or icons representing this
 # action. Optional. Defaults to the integration icon.
@@ -37,7 +37,7 @@ build:
   kind: Docker
 
 publish:
-  repository: relaysh/aws-ec2-step-instances-describe
+  repository: relaysh/oci-compute-step-instances-describe
 
 schemas:
   spec: 
@@ -48,49 +48,14 @@ schemas:
     file: output.schema.json
 
 examples:
-- summary: Describe all EC2 instances
+- summary: Describe all OCI Compute instances
   content:
     apiVersion: v1
     kind: Step
     name: describe-instances
-    image: relaysh/aws-ec2-step-instances-describe
+    image: relaysh/oci-compute-step-instances-describe
     spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
-- summary: List running EC2 instances
-  content:
-    apiVersion: v1
-    kind: Step
-    name: describe-instances
-    image: relaysh/aws-ec2-step-instances-describe
-    spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
-      filters:
-        instanceStateName: "running"
-- summary: List EC2 instances created by a specified keypair
-  content:
-    apiVersion: v1
-    kind: Step
-    name: describe-instances
-    image: relaysh/aws-ec2-step-instances-describe
-    spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
-      filters:
-        keyName: !Parameter keyName
-- summary: List EC2 instances with specified DNS name
-  content:
-    apiVersion: v1
-    kind: Step
-    name: describe-instances
-    image: relaysh/aws-ec2-step-instances-describe
-    spec:
-      aws:
-        connection: !Connection { type: aws, name: my-aws-account }
-        region: !Parameter awsRegion
-      filters:
-        dnsName: !Parameter instanceDnsName
+      oci:
+        connection: !Connection { type: oci, name: my-oci-account }
+        region: !Parameter ociRegion
+        compartment_id: !Parameter compartmentID

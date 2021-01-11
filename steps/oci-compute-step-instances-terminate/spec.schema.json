@@ -4,30 +4,40 @@
 	"properties": {
 		"aws": {
 			"type": "object",
-			"description": "A mapping of AWS account configuration.",
+			"description": "A mapping of OCI account configuration.",
 			"properties": {
 				"connection": {
 					"type": "object",
-					"x-relay-connectionType": "aws",
-					"description": "A Relay AWS connection to use",
+					"x-relay-connectionType": "oci",
+					"description": "A Relay OCI connection to use",
 					"properties": {
-						"accessKeyID": {
+						"userOCID": {
 							"type": "string",
-							"description": "Access Key ID"
+							"description": "User Oracle Cloud ID"
 						},
-						"secretAccessKey": {
+						"keyContent": {
 							"type": "string",
-							"description": "Secret Access Key"
+							"description": "Key Content of the OCI private API key"
+						},
+						"fingerprint": {
+							"type": "string",
+							"description": "Fingerprint of the OCI private API key"
+						},
+						"tenancy": {
+							"type": "string",
+							"description": "Oracle Cloud Tenancy ID"
 						}
 					},
 					"required": [
-						"accessKeyID",
-						"secretAccessKey"
+						"userOCID",
+						"keyContent",
+						"fingerprint",
+						"tenancy"
 					]
 				},
 				"region": {
 					"type": "string",
-					"description": "The AWS region to use (for example, us-west-2)"
+					"description": "The OCI region to use (for example, eu-frankfurt-1)"
 				}
 			},
 			"required": [
@@ -40,11 +50,11 @@
 			"items": {
 				"type": "string"
 			},
-			"description": "The list of EC2 instance IDs identifying the instances to terminate."
+			"description": "The list of OCI instance IDs identifying the instances to reboot."
 		}
 	},
 	"required": [
-		"aws",
+		"oci",
 		"instanceIDs"
 	],
 	"additionalProperties": false

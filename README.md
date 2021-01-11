@@ -4,19 +4,16 @@ Integration with Oracle Cloud Infrastructure Compute Service for Puppet Relay.
 
 ## Actions
 
-The following are supported actions: 
+The following are supported actions:  
 
 |   Type    |  Name              |
 |-----------|--------------------|
-| Step      | [oci-compute-step-images-describe](/steps/oci-compute-step-images-describe)  | 
-| Step      | [oci-compute-step-instances-describe](/steps/oci-compute-step-instances-describe)    | 
-| Step      | [oci-compute-step-instances-reboot](/steps/oci-compute-step-instances-reboot) | 
+| Step      | [oci-compute-step-images-describe](/steps/oci-compute-step-images-describe)  |  
+| Step      | [oci-compute-step-instances-describe](/steps/oci-compute-step-instances-describe)    |  
+| Step      | [oci-compute-step-instances-reboot](/steps/oci-compute-step-instances-reboot) |  
 | Step      | [oci-compute-step-instances-reboot](/steps/oci-compute-step-instances-start) |  
 | Step      | [oci-compute-step-instances-stop](/steps/oci-compute-step-instances-stop) |  
 | Step      | [oci-compute-step-instances-terminate](/steps/oci-compute-step-instances-terminate) |
-
-
-## Contributing
 
 ### Issues
 

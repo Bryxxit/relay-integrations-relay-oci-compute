@@ -1,25 +1,28 @@
 #!/usr/bin/env python
-import boto3
-from nebula_sdk import Interface, Dynamic as D
+import oci
 
+config = oci.config.from_file()
 
-relay = Interface()
+from oci.config import validate_config
+validate_config(config)
 
-session_token = None
-try:
-  session_token = relay.get(D.aws.connection.sessionToken)
-except:
-  pass
+# initialize the ComputeClient
+compute = oci.core.ComputeClient(config)
 
-sess = boto3.Session(
-  aws_access_key_id=relay.get(D.aws.connection.accessKeyID),
-  aws_secret_access_key=relay.get(D.aws.connection.secretAccessKey),
-  region_name=relay.get(D.aws.region),
-  aws_session_token=session_token
-)
-ec2 = sess.resource('ec2')
+instanceIDs = "dfsdfgsfdsdf","fsdxfgsd"
 
-instanceIDs = relay.get(D.instanceIDs)
-print('Stopping instances: {}'.format(instanceIDs))
-if len(instanceIDs) > 0:
-    ec2.instances.filter(InstanceIds=instanceIDs).stop()
+if not instanceIDs:
+  print("No instance IDs found")
+  exit(0)
+
+graceful = False
+
+if graceful:
+  print('Gracefully stoping instances: {}'.format(instanceIDs))
+  action = "SOFTSTOP"
+else:
+  print('Stoping instances: {}'.format(instanceIDs))
+  action = "STOP"
+
+for instanceID in instanceIDs:
+  compute.instance_action(instanceID,action)
