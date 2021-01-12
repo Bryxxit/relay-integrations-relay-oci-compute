@@ -4,15 +4,13 @@ from relay_sdk import Interface, Dynamic as D
 
 relay = Interface()
 
-config = oci.config.from_file()
-
-# config = {
-#     "user": relay.get(D.oci.connection.userOCID),
-#     "key_content": relay.get(D.oci.connection.keyContent),
-#     "fingerprint": relay.get(D.oci.connection.fingerprint),
-#     "tenancy": relay.get(D.oci.connection.tenancy),
-#     "region": relay.get(D.oci.region)
-# }
+config = {
+    "user": relay.get(D.oci.connection.userOCID),
+    "key_content": relay.get(D.oci.connection.keyContent),
+    "fingerprint": relay.get(D.oci.connection.fingerprint),
+    "tenancy": relay.get(D.oci.connection.tenancy),
+    "region": relay.get(D.oci.region)
+}
 
 from oci.config import validate_config
 validate_config(config)
@@ -20,9 +18,7 @@ validate_config(config)
 # initialize the ComputeClient
 compute = oci.core.ComputeClient(config)
 
-# compartment_id = relay.get(D.oci.compartment_id)
-
-compartment_id = "ocid1.compartment.oc1..aaaaaaaa5av46cvfltbu6jqhwctvvy7hdnpd4alhguhsmvj7j63rnn5fpceq"
+compartment_id = relay.get(D.oci.compartment_id)
 
 if not compartment_id:
   compartment_id = config["tenancy"]
