@@ -1,4 +1,4 @@
-# Oracle Cloud Infrastructure Compute Cloud integration
+# Oracle Cloud Infrastructure Compute integration
 
 Integration with Oracle Cloud Infrastructure Compute Service for Puppet Relay.
 
