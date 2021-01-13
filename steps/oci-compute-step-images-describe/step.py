@@ -18,7 +18,7 @@ validate_config(config)
 # initialize the ComputeClient
 compute = oci.core.ComputeClient(config)
 
-compartment_id = relay.get(D.oci.compartment_id)
+compartment_id = relay.get(D.oci.compartmentID)
 
 if not compartment_id:
   compartment_id = config["tenancy"]
